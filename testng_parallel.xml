@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.lemon.listener.AllureReportListener"></listener>
+        <listener class-name="com.lemon.listener.GlobalTestngRetry"></listener>
+    </listeners>
+
+<test name="线程1">
+<parameter name="browserName" value="chrome"></parameter>
+<classes>
+    <class name="com.lemon.testcase.frontend.LoginTest"/>
+</classes>
+</test>
+
+    <test name="线程2">
+        <parameter name="browserName" value="chrome"></parameter>
+        <classes>
+            <class name="com.lemon.testcase.frontend.InvestTest"/>
+        </classes>
+    </test>
+</suite>
