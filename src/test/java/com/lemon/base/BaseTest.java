@@ -34,8 +34,11 @@ public class BaseTest {
             //选择谷歌浏览器
             System.setProperty("webdriver.chrome.driver", EnvConfig.OPTION_DRIVER_LINUX);
             ChromeOptions chromeOptions= new ChromeOptions();//设置为 headless 模式 (必须)
-            driver = new ChromeDriver(chromeOptions);
             chromeOptions.addArguments("-headless");
+            chromeOptions.addArguments("--disable-gpu");
+            chromeOptions.addArguments("window-size=1024,768");
+            chromeOptions.addArguments("--no-sandbox");
+            driver = new ChromeDriver(chromeOptions);
             threadLocal.set(driver);
             driver.manage().window().maximize();
             log.info("已打开谷歌浏览器");
