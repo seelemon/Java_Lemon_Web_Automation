@@ -4,6 +4,7 @@ import com.lemon.config.EnvConfig;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -31,8 +32,9 @@ public class BaseTest {
            driver = null;
         if (browserName.equals("chrome")){
             //选择谷歌浏览器
-            System.setProperty("webdriver.chrome.driver", EnvConfig.OPTION_DRIVER_LINUX);
-            driver = new ChromeDriver();
+            System.setProperty("webdriver.chrome.driver", EnvConfig.OPTION_DRIVER_PATH);
+            ChromeOptions chromeOptions= new ChromeOptions();//设置为 headless 模式 (必须)
+            driver = new ChromeDriver(chromeOptions);
             threadLocal.set(driver);
             driver.manage().window().maximize();
             log.info("已打开谷歌浏览器");
