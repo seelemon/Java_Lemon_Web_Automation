@@ -1,5 +1,6 @@
 package com.lemon.base;
 
+import com.lemon.config.EnvConfig;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,7 +31,7 @@ public class BaseTest {
            driver = null;
         if (browserName.equals("chrome")){
             //选择谷歌浏览器
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", EnvConfig.OPTION_DRIVER_LINUX);
             driver = new ChromeDriver();
             threadLocal.set(driver);
             driver.manage().window().maximize();
