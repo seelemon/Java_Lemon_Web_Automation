@@ -14,7 +14,7 @@ public class EnvConfig {
     public static final String BACKEND_LOGIN = BASE_URI + "/Admin/Index/login.html";
     //谷歌driver路径
     public static final String OPTION_DRIVER_WINDOWS = "src/test/resources/chromedriver.exe";
-    public static final String OPTION_DRIVER_LINUX = "/opt/driver";
+    public static final String OPTION_DRIVER_LINUX = "/opt/driver/chromedriver";
 
 
 }

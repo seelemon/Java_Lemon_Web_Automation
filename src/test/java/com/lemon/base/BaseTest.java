@@ -35,6 +35,7 @@ public class BaseTest {
             System.setProperty("webdriver.chrome.driver", EnvConfig.OPTION_DRIVER_LINUX);
             ChromeOptions chromeOptions= new ChromeOptions();//设置为 headless 模式 (必须)
             driver = new ChromeDriver(chromeOptions);
+            chromeOptions.addArguments("-headless");
             threadLocal.set(driver);
             driver.manage().window().maximize();
             log.info("已打开谷歌浏览器");
@@ -78,5 +79,9 @@ public class BaseTest {
 
     public void quitBrowser(){
         getDriver().quit();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("user.dir"));
     }
 }
