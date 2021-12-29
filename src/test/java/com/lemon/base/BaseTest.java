@@ -32,7 +32,7 @@ public class BaseTest {
            driver = null;
         if (browserName.equals("chrome")){
             //选择谷歌浏览器
-            System.setProperty("webdriver.chrome.driver", EnvConfig.OPTION_DRIVER_PATH);
+            System.setProperty("webdriver.chrome.driver", EnvConfig.OPTION_DRIVER_LINUX);
             ChromeOptions chromeOptions= new ChromeOptions();//设置为 headless 模式 (必须)
             driver = new ChromeDriver(chromeOptions);
             threadLocal.set(driver);

@@ -13,7 +13,8 @@ public class EnvConfig {
     //后台登录网址
     public static final String BACKEND_LOGIN = BASE_URI + "/Admin/Index/login.html";
     //谷歌driver路径
-    public static final String OPTION_DRIVER_PATH = "src/test/resources/chromedriver.exe";
+    public static final String OPTION_DRIVER_WINDOWS = "src/test/resources/chromedriver.exe";
+    public static final String OPTION_DRIVER_LINUX = "/opt/driver";
 
 
 }
